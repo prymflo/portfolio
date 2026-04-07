@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrimeFlow | Elite Visual Production</title>
+
+<link rel="icon" href="logo.jpg">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body {
+    margin:0;
+    font-family:sans-serif;
+    background:#0A0A14;
+    color:white;
+}
+
+.portfolio {
+    padding:60px 20px;
+}
+
+.portfolio-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.portfolio-item {
+    border-radius:15px;
+    overflow:hidden;
+    display:flex;
+}
+
+video, img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.tab-btn {
+    padding:10px 20px;
+    margin:5px;
+    cursor:pointer;
+}
+
+.tab-btn.active {
+    background:#C9A1F0;
+}
+</style>
+</head>
+
+<body>
+
+<section class="portfolio">
+<h2>Portfolio</h2>
+
+<div>
+<button class="tab-btn active" data-filter="all">All</button>
+<button class="tab-btn" data-filter="editing">Video Editing</button>
+<button class="tab-btn" data-filter="animation">Animation</button>
+<button class="tab-btn" data-filter="design">Graphic Design</button>
+</div>
+
+<div class="portfolio-grid">
+
+<!-- 🎬 VIDEO EDITING -->
+<video class="portfolio-item" data-category="editing" src="https://drive.google.com/uc?export=download&id=1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn" autoplay muted loop></video>
+
+<video class="portfolio-item" data-category="editing" src="https://drive.google.com/uc?export=download&id=1ckvhMgp0gTTWBwmOXaNMCKMU3pIGS7eF" autoplay muted loop></video>
+
+<video class="portfolio-item" data-category="editing" src="https://drive.google.com/uc?export=download&id=1ptn8VXK2ysjQh7Ij_jqHm5TGAT-T9Emf" autoplay muted loop></video>
+
+<video class="portfolio-item" data-category="editing" src="https://drive.google.com/uc?export=download&id=16o_ZX4LCJbMcZREonoRq6KWtH-5Nc8aP" autoplay muted loop></video>
+
+<!-- 🎞️ ANIMATION -->
+<video class="portfolio-item" data-category="animation" src="https://drive.google.com/uc?export=download&id=1Tjo3t-zTR7Dubpl3fBGv__nOdX528T4c" autoplay muted loop></video>
+
+<video class="portfolio-item" data-category="animation" src="https://drive.google.com/uc?export=download&id=1i08rY4_pNrzm8hnRnUHru-IeQGBOvYkR" autoplay muted loop></video>
+
+<video class="portfolio-item" data-category="animation" src="https://drive.google.com/uc?export=download&id=1lzOx7mjvDYy0JzRmk4IrrhORhxpIo16c" autoplay muted loop></video>
+
+<video class="portfolio-item" data-category="animation" src="https://drive.google.com/uc?export=download&id=1gsCPhe5W-4UADjVbndktFEMUcPvj3zpl" autoplay muted loop></video>
+
+<!-- 🎨 GRAPHIC DESIGN -->
+<img class="portfolio-item" data-category="design" src="https://drive.google.com/uc?export=download&id=1UiDcyn-XxPzaWM0M5hWAqRSry9SoNvcO">
+
+<img class="portfolio-item" data-category="design" src="https://drive.google.com/uc?export=download&id=1UC3waeVQFbhh0GMv_v0_XdDEQN4AhHMo">
+
+<img class="portfolio-item" data-category="design" src="https://drive.google.com/uc?export=download&id=1u6Td0sJ30MgngZSmyu8wc3xRQR7MXpOE">
+
+<img class="portfolio-item" data-category="design" src="https://drive.google.com/uc?export=download&id=1YFD7dOu41_at3jLrBeXymShVX3vixeqF">
+
+<img class="portfolio-item" data-category="design" src="https://drive.google.com/uc?export=download&id=1Gk99zANEHKQ_PpxyfvacPyU8frig30nb">
+
+<img class="portfolio-item" data-category="design" src="https://drive.google.com/uc?export=download&id=1upCaHqAbxfJZcGHlG90jJoFIdXq2Q89o">
+
+</div>
+</section>
+
+<script>
+const tabs = document.querySelectorAll('.tab-btn');
+const items = document.querySelectorAll('.portfolio-item');
+
+tabs.forEach(tab=>{
+tab.addEventListener('click',()=>{
+tabs.forEach(t=>t.classList.remove('active'));
+tab.classList.add('active');
+
+let filter = tab.dataset.filter;
+
+items.forEach(item=>{
+if(filter==="all" || item.dataset.category===filter){
+item.style.display="block";
+}else{
+item.style.display="none";
+}
+});
+});
+});
+</script>
+
+</body>
+</html>
