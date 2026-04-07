@@ -6,146 +6,172 @@
 <title>PrimeFlow</title>
 
 <style>
-body {
-    margin: 0;
+:root {
+    --primary:#C9A1F0;
+    --secondary:#FF6EC7;
+    --bg:#050509;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
     font-family: Arial;
-    background: #0A0A14;
-    color: white;
 }
 
-h1 {
-    text-align: center;
-    margin-top: 40px;
+body {
+    background: var(--bg);
+    color:white;
 }
 
-.tabs {
-    text-align: center;
-    margin: 30px 0;
+/* HERO */
+.hero {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
-.tabs button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
+.hero h1 {
+    font-size:3rem;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.active {
-    background: #C9A1F0;
+.btn {
+    margin-top:20px;
+    padding:12px 25px;
+    border-radius:30px;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    border:none;
+    color:white;
+    cursor:pointer;
 }
 
+/* SECTION */
+section {
+    padding:60px 20px;
+}
+
+/* GRID */
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
 
+/* CARD */
 .card {
-    background: #111;
-    border-radius: 10px;
-    overflow: hidden;
+    background:rgba(255,255,255,0.05);
+    border-radius:15px;
+    overflow:hidden;
 }
 
 iframe, img {
-    width: 100%;
-    height: 220px;
-    border: none;
-    object-fit: cover;
+    width:100%;
+    height:220px;
+    border:none;
+}
+
+/* CONTACT */
+.contact {
+    max-width:500px;
+    margin:auto;
+}
+
+input, textarea {
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+}
+
+footer {
+    text-align:center;
+    padding:30px;
+    color:#aaa;
 }
 </style>
 </head>
 
 <body>
 
-<h1>PrimeFlow Portfolio</h1>
+<!-- HERO -->
+<section class="hero">
+<h1>PrimeFlow</h1>
+<p>Elite Editing • Animation • Design</p>
+<button class="btn" onclick="scrollToPortfolio()">View Work</button>
+</section>
 
-<div class="tabs">
-<button class="active" onclick="filter('all')">All</button>
-<button onclick="filter('editing')">Video Editing</button>
-<button onclick="filter('animation')">Animation</button>
-<button onclick="filter('design')">Graphic Design</button>
-</div>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+<h2 style="text-align:center;">Our Work</h2>
 
 <div class="grid">
 
-<!-- VIDEO EDITING -->
-<div class="card" data-cat="editing">
-<iframe src="https://drive.google.com/file/d/1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn/preview" allow="autoplay"></iframe>
-</div>
-
-<div class="card" data-cat="editing">
+<!-- VIDEO -->
+<iframe src="https://drive.google.com/file/d/1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn/preview"></iframe>
 <iframe src="https://drive.google.com/file/d/1ckvhMgp0gTTWBwmOXaNMCKMU3pIGS7eF/preview"></iframe>
-</div>
-
-<div class="card" data-cat="editing">
 <iframe src="https://drive.google.com/file/d/1ptn8VXK2ysjQh7Ij_jqHm5TGAT-T9Emf/preview"></iframe>
-</div>
-
-<div class="card" data-cat="editing">
 <iframe src="https://drive.google.com/file/d/16o_ZX4LCJbMcZREonoRq6KWtH-5Nc8aP/preview"></iframe>
-</div>
 
 <!-- ANIMATION -->
-<div class="card" data-cat="animation">
 <iframe src="https://drive.google.com/file/d/1Tjo3t-zTR7Dubpl3fBGv__nOdX528T4c/preview"></iframe>
-</div>
-
-<div class="card" data-cat="animation">
 <iframe src="https://drive.google.com/file/d/1i08rY4_pNrzm8hnRnUHru-IeQGBOvYkR/preview"></iframe>
-</div>
-
-<div class="card" data-cat="animation">
 <iframe src="https://drive.google.com/file/d/1lzOx7mjvDYy0JzRmk4IrrhORhxpIo16c/preview"></iframe>
-</div>
 
-<div class="card" data-cat="animation">
-<iframe src="https://drive.google.com/file/d/1gsCPhe5W-4UADjVbndktFEMUcPvj3zpl/preview"></iframe>
-</div>
-
-<!-- GRAPHIC DESIGN -->
-<div class="card" data-cat="design">
+<!-- IMAGES -->
 <img src="https://lh3.googleusercontent.com/d/1UiDcyn-XxPzaWM0M5hWAqRSry9SoNvcO">
-</div>
-
-<div class="card" data-cat="design">
 <img src="https://lh3.googleusercontent.com/d/1UC3waeVQFbhh0GMv_v0_XdDEQN4AhHMo">
-</div>
-
-<div class="card" data-cat="design">
-<img src="https://lh3.googleusercontent.com/d/1u6Td0sJ30MgngZSmyu8wc3xRQR7MXpOE">
-</div>
-
-<div class="card" data-cat="design">
-<img src="https://lh3.googleusercontent.com/d/1YFD7dOu41_at3jLrBeXymShVX3vixeqF">
-</div>
-
-<div class="card" data-cat="design">
-<img src="https://lh3.googleusercontent.com/d/1Gk99zANEHKQ_PpxyfvacPyU8frig30nb">
-</div>
-
-<div class="card" data-cat="design">
-<img src="https://lh3.googleusercontent.com/d/1upCaHqAbxfJZcGHlG90jJoFIdXq2Q89o">
-</div>
 
 </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+<h2 style="text-align:center;">About PrimeFlow</h2>
+<p style="text-align:center; max-width:600px; margin:auto;">
+We create high-quality video editing, animation, and design for creators and brands.
+Our goal is simple — make your content look viral.
+</p>
+</section>
+
+<!-- CONTACT -->
+<section>
+<h2 style="text-align:center;">Contact Us</h2>
+
+<div class="contact">
+<form action="https://formspree.io/f/mayvlqre" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Project"></textarea>
+<button class="btn">Send Message</button>
+</form>
+
+<br>
+
+<!-- EMAIL BUTTON -->
+<a href="mailto:prymflo@gmail.com" class="btn">Email Directly</a>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2025 PrimeFlow</p>
+<p>
+<a href="https://instagram.com/prymflo" style="color:white;">Instagram</a> |
+<a href="https://youtube.com/@prymflo" style="color:white;">YouTube</a>
+</p>
+</footer>
 
 <script>
-function filter(type) {
-    let cards = document.querySelectorAll('.card');
-    let buttons = document.querySelectorAll('.tabs button');
-
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-
-    cards.forEach(card => {
-        if (type === 'all' || card.dataset.cat === type) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
-    });
+function scrollToPortfolio(){
+    document.getElementById("portfolio").scrollIntoView({behavior:"smooth"});
 }
 </script>
 
