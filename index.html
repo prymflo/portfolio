@@ -5,23 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PrimeFlow</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <style>
-:root {
-    --primary:#C9A1F0;
-    --secondary:#FF6EC7;
-    --bg:#050509;
-}
-
-* {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial;
-}
-
 body {
-    background: var(--bg);
+    margin:0;
+    font-family:'Inter',sans-serif;
+    background:#050509;
     color:white;
+    overflow-x:hidden;
+}
+
+/* NAV */
+nav {
+    position:fixed;
+    width:100%;
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(10px);
+}
+
+nav a {
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
 }
 
 /* HERO */
@@ -35,54 +44,60 @@ body {
 }
 
 .hero h1 {
-    font-size:3rem;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    font-size:4rem;
+    background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .btn {
-    margin-top:20px;
     padding:12px 25px;
-    border-radius:30px;
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
     border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
     color:white;
     cursor:pointer;
+    margin-top:20px;
+    transition:0.3s;
+}
+
+.btn:hover {
+    transform:scale(1.1);
 }
 
 /* SECTION */
 section {
-    padding:60px 20px;
+    padding:100px 50px;
 }
 
 /* GRID */
 .grid {
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+    gap:30px;
 }
 
 /* CARD */
 .card {
     background:rgba(255,255,255,0.05);
     border-radius:15px;
-    overflow:hidden;
+    padding:20px;
+    transition:0.4s;
 }
 
-iframe, img {
-    width:100%;
-    height:220px;
-    border:none;
+.card:hover {
+    transform:translateY(-10px);
 }
 
-/* CONTACT */
-.contact {
-    max-width:500px;
-    margin:auto;
+/* PRICING */
+.price {
+    font-size:1.5rem;
+    margin:10px 0;
+    color:#C9A1F0;
 }
 
-input, textarea {
+/* FORM */
+form input, form textarea, form select {
     width:100%;
     padding:12px;
     margin:10px 0;
@@ -90,89 +105,164 @@ input, textarea {
     border-radius:8px;
 }
 
+/* ANIMATION */
+.fade {
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
+
+.show {
+    opacity:1;
+    transform:translateY(0);
+}
+
 footer {
     text-align:center;
-    padding:30px;
-    color:#aaa;
+    padding:50px;
+    color:#777;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+<div>PrimeFlow</div>
+<div>
+<a href="#work">Work</a>
+<a href="#services">Services</a>
+<a href="#pricing">Pricing</a>
+<a href="#order">Order</a>
+</div>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
-<h1>PrimeFlow</h1>
-<p>Elite Editing • Animation • Design</p>
-<button class="btn" onclick="scrollToPortfolio()">View Work</button>
+<section class="hero fade">
+<h1>We Create Viral Content</h1>
+<p>Editing • Animation • Design</p>
+<button class="btn" onclick="scrollToSection('order')">Start Project</button>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-<h2 style="text-align:center;">Our Work</h2>
+<!-- SERVICES -->
+<section id="services" class="fade">
+<h2>Services</h2>
+
+<div class="grid">
+<div class="card">🎬 Video Editing<br><small>YouTube, Reels, Ads</small></div>
+<div class="card">🎞 Animation<br><small>2D, Motion Graphics</small></div>
+<div class="card">🎨 Graphic Design<br><small>Thumbnails, Branding</small></div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="fade">
+<h2>Pricing</h2>
 
 <div class="grid">
 
-<!-- VIDEO -->
+<div class="card">
+<h3>Basic</h3>
+<div class="price">$30 - $100</div>
+<p>Short edits, reels, simple design</p>
+</div>
+
+<div class="card">
+<h3>Standard</h3>
+<div class="price">$100 - $150</div>
+<p>Advanced editing & animations</p>
+</div>
+
+<div class="card">
+<h3>Pro</h3>
+<div class="price">$150 - $200</div>
+<p>High-quality cinematic work</p>
+</div>
+
+<div class="card">
+<h3>Premium</h3>
+<div class="price">$200+</div>
+<p>Full package + priority delivery</p>
+</div>
+
+</div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="fade">
+<h2>Our Work</h2>
+
+<div class="grid">
 <iframe src="https://drive.google.com/file/d/1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn/preview"></iframe>
-<iframe src="https://drive.google.com/file/d/1ckvhMgp0gTTWBwmOXaNMCKMU3pIGS7eF/preview"></iframe>
-<iframe src="https://drive.google.com/file/d/1ptn8VXK2ysjQh7Ij_jqHm5TGAT-T9Emf/preview"></iframe>
-<iframe src="https://drive.google.com/file/d/16o_ZX4LCJbMcZREonoRq6KWtH-5Nc8aP/preview"></iframe>
-
-<!-- ANIMATION -->
 <iframe src="https://drive.google.com/file/d/1Tjo3t-zTR7Dubpl3fBGv__nOdX528T4c/preview"></iframe>
-<iframe src="https://drive.google.com/file/d/1i08rY4_pNrzm8hnRnUHru-IeQGBOvYkR/preview"></iframe>
-<iframe src="https://drive.google.com/file/d/1lzOx7mjvDYy0JzRmk4IrrhORhxpIo16c/preview"></iframe>
-
-<!-- IMAGES -->
 <img src="https://lh3.googleusercontent.com/d/1UiDcyn-XxPzaWM0M5hWAqRSry9SoNvcO">
-<img src="https://lh3.googleusercontent.com/d/1UC3waeVQFbhh0GMv_v0_XdDEQN4AhHMo">
-
 </div>
 </section>
 
-<!-- ABOUT -->
-<section>
-<h2 style="text-align:center;">About PrimeFlow</h2>
-<p style="text-align:center; max-width:600px; margin:auto;">
-We create high-quality video editing, animation, and design for creators and brands.
-Our goal is simple — make your content look viral.
-</p>
-</section>
+<!-- ORDER FORM -->
+<section id="order" class="fade">
+<h2>Start Your Project</h2>
 
-<!-- CONTACT -->
-<section>
-<h2 style="text-align:center;">Contact Us</h2>
+<form onsubmit="sendEmail(event)">
+<input type="text" id="name" placeholder="Name" required>
+<input type="email" id="email" placeholder="Email" required>
 
-<div class="contact">
-<form action="https://formspree.io/f/mayvlqre" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Your Project"></textarea>
-<button class="btn">Send Message</button>
+<select id="service">
+<option>Video Editing</option>
+<option>Animation</option>
+<option>Graphic Design</option>
+</select>
+
+<select id="budget">
+<option>$30-100</option>
+<option>$100-150</option>
+<option>$150-200</option>
+<option>$200+</option>
+</select>
+
+<textarea id="details" placeholder="Project details"></textarea>
+
+<button class="btn">Send Request</button>
 </form>
-
-<br>
-
-<!-- EMAIL BUTTON -->
-<a href="mailto:prymflo@gmail.com" class="btn">Email Directly</a>
-
-</div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-<p>© 2025 PrimeFlow</p>
-<p>
-<a href="https://instagram.com/prymflo" style="color:white;">Instagram</a> |
-<a href="https://youtube.com/@prymflo" style="color:white;">YouTube</a>
-</p>
+<p>© PrimeFlow</p>
+<p>📧 prymflo@gmail.com</p>
 </footer>
 
 <script>
-function scrollToPortfolio(){
-    document.getElementById("portfolio").scrollIntoView({behavior:"smooth"});
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
+
+/* EMAIL SYSTEM */
+function sendEmail(e){
+e.preventDefault();
+
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let service=document.getElementById("service").value;
+let budget=document.getElementById("budget").value;
+let details=document.getElementById("details").value;
+
+let body=`Name: ${name}%0AEmail: ${email}%0AService: ${service}%0ABudget: ${budget}%0ADetails: ${details}`;
+
+window.location.href=`mailto:prymflo@gmail.com?subject=New Project&body=${body}`;
+}
+
+/* SCROLL ANIMATION */
+let elements=document.querySelectorAll('.fade');
+
+window.addEventListener('scroll',()=>{
+elements.forEach(el=>{
+let pos=el.getBoundingClientRect().top;
+if(pos<window.innerHeight-100){
+el.classList.add('show');
+}
+});
+});
 </script>
 
 </body>
