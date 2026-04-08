@@ -7,6 +7,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
+<!-- ✅ EMAILJS ADDED -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 <style>
 body{
 margin:0;
@@ -43,7 +46,7 @@ text-decoration:none;
 
 .nav a:hover{color:white;}
 
-/* HERO ANIMATION */
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -51,12 +54,6 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-animation:fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn{
-from{opacity:0; transform:scale(0.9);}
-to{opacity:1; transform:scale(1);}
 }
 
 .hero h1{
@@ -73,102 +70,6 @@ border:none;
 border-radius:50px;
 background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
 cursor:pointer;
-transition:0.3s;
-}
-
-.btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 30px #C9A1F0;
-}
-
-/* TRUST */
-.trust{
-display:flex;
-justify-content:center;
-gap:60px;
-padding:40px;
-text-align:center;
-}
-
-/* SECTION */
-section{
-padding:120px 60px;
-}
-
-h2{
-text-align:center;
-margin-bottom:40px;
-}
-
-/* FILTER */
-.filters{
-text-align:center;
-margin-bottom:30px;
-}
-
-.filters button{
-padding:10px 20px;
-margin:5px;
-border:none;
-border-radius:20px;
-background:#111;
-color:white;
-cursor:pointer;
-}
-
-.filters .active{
-background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
-}
-
-/* CARD */
-.card{
-background:#111;
-border-radius:20px;
-overflow:hidden;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-}
-
-.card iframe{
-width:100%;
-height:400px;
-object-fit:cover;
-}
-
-.card img{
-width:100%;
-height:300px;
-object-fit:cover;
-}
-
-/* PRICING */
-.pricing{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.box{
-background:#111;
-padding:30px;
-border-radius:20px;
-text-align:center;
-transition:0.3s;
-}
-
-.box:hover{
-transform:scale(1.1);
 }
 
 /* FORM */
@@ -189,93 +90,21 @@ border-radius:10px;
 background:#1a1a1a;
 color:white;
 }
-
-footer{
-text-align:center;
-padding:50px;
-color:#777;
-}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-<img src="https://lh3.googleusercontent.com/d/1PfQ73bYvnnha3x9-cl7Vme6lh_33QRI0">
-<div>
-<a href="#work">Work</a>
-<a href="#pricing">Pricing</a>
-<a href="#order">Order</a>
-</div>
-</div>
-
-<!-- HERO -->
 <section class="hero">
 <h1>We Don’t Edit Videos.<br>We Create Attention.</h1>
-<button class="btn" onclick="scrollToSection('order')">Start Project</button>
 </section>
 
-<!-- TRUST -->
-<div class="trust">
-<div><b>50+</b><br>Clients</div>
-<div><b>10M+</b><br>Views</div>
-<div><b>100+</b><br>Projects</div>
-</div>
-
-<!-- WORK -->
-<section id="work">
-<h2>Selected Work</h2>
-
-<div class="filters">
-<button class="active" onclick="filter('all',this)">All</button>
-<button onclick="filter('editing',this)">Editing</button>
-<button onclick="filter('animation',this)">Animation</button>
-<button onclick="filter('design',this)">Design</button>
-</div>
-
-<div class="grid">
-
-<!-- EDITING (ALL YOUR VIDEOS) -->
-<div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn/preview"></iframe></div>
-<div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1ckvhMgp0gTTWBwmOXaNMCKMU3pIGS7eF/preview"></iframe></div>
-<div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1ptn8VXK2ysjQh7Ij_jqHm5TGAT-T9Emf/preview"></iframe></div>
-<div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/16o_ZX4LCJbMcZREonoRq6KWtH-5Nc8aP/preview"></iframe></div>
-
-<!-- ANIMATION -->
-<div class="card" data-cat="animation"><iframe src="https://drive.google.com/file/d/1Tjo3t-zTR7Dubpl3fBGv__nOdX528T4c/preview"></iframe></div>
-<div class="card" data-cat="animation"><iframe src="https://drive.google.com/file/d/1i08rY4_pNrzm8hnRnUHru-IeQGBOvYkR/preview"></iframe></div>
-<div class="card" data-cat="animation"><iframe src="https://drive.google.com/file/d/1lzOx7mjvDYy0JzRmk4IrrhORhxpIo16c/preview"></iframe></div>
-<div class="card" data-cat="animation"><iframe src="https://drive.google.com/file/d/1gsCPhe5W-4UADjVbndktFEMUcPvj3zpl/preview"></iframe></div>
-
-<!-- DESIGN -->
-<div class="card" data-cat="design"><img src="https://lh3.googleusercontent.com/d/1UiDcyn-XxPzaWM0M5hWAqRSry9SoNvcO"></div>
-<div class="card" data-cat="design"><img src="https://lh3.googleusercontent.com/d/1UC3waeVQFbhh0GMv_v0_XdDEQN4AhHMo"></div>
-<div class="card" data-cat="design"><img src="https://lh3.googleusercontent.com/d/1u6Td0sJ30MgngZSmyu8wc3xRQR7MXpOE"></div>
-<div class="card" data-cat="design"><img src="https://lh3.googleusercontent.com/d/1YFD7dOu41_at3jLrBeXymShVX3vixeqF"></div>
-
-</div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing">
-<h2>Pricing</h2>
-<div class="pricing">
-<div class="box">Basic<br>$30-100</div>
-<div class="box">Standard<br>$100-150</div>
-<div class="box">Pro<br>$150-200</div>
-<div class="box">Premium<br>$200+</div>
-</div>
-</section>
-
-<!-- ORDER -->
 <section id="order">
-<h2>Start Your Project</h2>
-
 <div class="form-box">
+
 <form onsubmit="sendEmail(event)">
-<input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
+<input id="name" placeholder="Name" required>
+<input id="email" placeholder="Email" required>
 
 <select id="service">
 <option>Video Editing</option>
@@ -294,34 +123,33 @@ color:#777;
 
 <button class="btn">Send Request</button>
 </form>
+
 </div>
 </section>
 
-<footer>
-<p>© PrimeFlow</p>
-</footer>
-
 <script>
-function scrollToSection(id){
-document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-
-function filter(type,btn){
-let cards=document.querySelectorAll('.card');
-let buttons=document.querySelectorAll('.filters button');
-
-buttons.forEach(b=>b.classList.remove('active'));
-btn.classList.add('active');
-
-cards.forEach(card=>{
-card.style.display=(type==="all"||card.dataset.cat===type)?"block":"none";
-});
-}
+(function(){
+  emailjs.init("Ktjf5qHWboVzFpe0_"); // ✅ YOUR KEY ALREADY ADDED
+})();
 
 function sendEmail(e){
-e.preventDefault();
-let body=`Name:${name.value}%0AEmail:${email.value}%0AService:${service.value}%0ABudget:${budget.value}%0ADetails:${details.value}`;
-window.location.href=`mailto:prymflo@gmail.com?subject=Project&body=${body}`;
+  e.preventDefault();
+
+  let params = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    service: document.getElementById("service").value,
+    budget: document.getElementById("budget").value,
+    details: document.getElementById("details").value
+  };
+
+  emailjs.send("service_7pha2yo", "template_tn4ch1n", params)
+  .then(function(){
+    alert("✅ Request Sent Successfully!");
+  }, function(error){
+    alert("❌ Failed to send");
+    console.log(error);
+  });
 }
 </script>
 
