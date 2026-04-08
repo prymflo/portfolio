@@ -9,191 +9,205 @@
 
 <style>
 body {
-    margin:0;
-    font-family:'Inter',sans-serif;
-    background:#050509;
-    color:white;
+margin:0;
+font-family:'Inter',sans-serif;
+background:#050509;
+color:white;
+overflow-x:hidden;
 }
 
 /* NAV */
 nav {
-    position:fixed;
-    width:100%;
-    padding:20px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,0,0.6);
-    backdrop-filter:blur(10px);
-    z-index:100;
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(12px);
+z-index:100;
 }
 
 nav img {
-    height:40px;
+height:40px;
+object-fit:contain;
 }
 
 nav a {
-    margin-left:20px;
-    text-decoration:none;
-    color:#aaa;
-    transition:0.3s;
+color:#aaa;
+margin-left:20px;
+text-decoration:none;
+transition:0.3s;
 }
 
 nav a:hover {
-    color:white;
+color:white;
 }
 
 /* HERO */
 .hero {
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
 .hero h1 {
-    font-size:4.5rem;
-    line-height:1.1;
-    background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+font-size:5rem;
+line-height:1.1;
+background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p {
-    color:#aaa;
-    margin-top:15px;
+margin-top:20px;
+color:#aaa;
 }
 
 .btn {
-    margin-top:30px;
-    padding:14px 30px;
-    border-radius:50px;
-    border:none;
-    background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
-    cursor:pointer;
-    transition:0.4s;
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
+cursor:pointer;
+transition:0.4s;
 }
 
 .btn:hover {
-    transform:scale(1.1);
-    box-shadow:0 0 30px rgba(201,161,240,0.5);
+transform:scale(1.1);
+box-shadow:0 0 40px rgba(201,161,240,0.5);
 }
 
 /* SECTION */
 section {
-    padding:120px 80px;
+padding:120px 80px;
 }
 
-/* TITLE */
 h2 {
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:50px;
+text-align:center;
+font-size:2.5rem;
+margin-bottom:50px;
 }
 
 /* FILTER */
 .filters {
-    text-align:center;
-    margin-bottom:40px;
+text-align:center;
+margin-bottom:40px;
 }
 
 .filters button {
-    padding:10px 20px;
-    margin:5px;
-    border-radius:20px;
-    border:none;
-    background:#111;
-    color:white;
-    cursor:pointer;
+padding:10px 20px;
+margin:5px;
+border-radius:20px;
+border:none;
+background:#111;
+color:white;
+cursor:pointer;
 }
 
 .filters .active {
-    background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
+background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
+}
+
+/* FEATURED */
+.featured {
+max-width:1100px;
+margin:auto;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:50px;
+}
+
+.featured iframe {
+width:100%;
+height:450px;
 }
 
 /* GRID */
 .grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
 
-/* CARD */
 .card {
-    border-radius:20px;
-    overflow:hidden;
-    transition:0.5s;
+border-radius:20px;
+overflow:hidden;
+transition:0.4s;
 }
 
 .card:hover {
-    transform:translateY(-15px) scale(1.03);
+transform:scale(1.05);
 }
 
 iframe, img {
-    width:100%;
-    height:250px;
+width:100%;
+height:250px;
+border:none;
 }
 
 /* PRICING */
 .pricing {
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
 }
 
 .price-box {
-    padding:30px;
-    border-radius:20px;
-    background:#111;
-    text-align:center;
-    width:250px;
-    transition:0.4s;
+padding:30px;
+border-radius:20px;
+background:#111;
+text-align:center;
+width:250px;
+transition:0.4s;
 }
 
 .price-box:hover {
-    transform:scale(1.1);
+transform:scale(1.1);
 }
 
 .price {
-    color:#C9A1F0;
-    font-size:2rem;
+color:#C9A1F0;
+font-size:2rem;
 }
 
 /* FORM */
 form {
-    max-width:500px;
-    margin:auto;
+max-width:500px;
+margin:auto;
 }
 
 form input, form textarea, form select {
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border-radius:10px;
-    border:none;
-}
-
-/* FOOTER */
-footer {
-    text-align:center;
-    padding:60px;
-    color:#777;
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:none;
 }
 
 /* SCROLL ANIMATION */
 .reveal {
-    opacity:0;
-    transform:translateY(50px);
-    transition:1s;
+opacity:0;
+transform:translateY(60px);
+transition:1s;
 }
 
 .reveal.active {
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
+}
+
+footer {
+text-align:center;
+padding:60px;
+color:#777;
 }
 </style>
 </head>
@@ -212,7 +226,7 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-<h1>Create Content That Wins Attention</h1>
+<h1>Create Content That Dominates</h1>
 <p>Editing • Animation • Design</p>
 <button class="btn" onclick="scrollToSection('order')">Start Project</button>
 </section>
@@ -228,20 +242,28 @@ footer {
 <button onclick="filter('design',this)">Design</button>
 </div>
 
-<div class="grid">
-
-<!-- ADD ALL YOUR ITEMS SAME WAY -->
-<div class="card" data-cat="editing">
+<div class="featured">
 <iframe src="https://drive.google.com/file/d/1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn/preview"></iframe>
 </div>
 
-<div class="card" data-cat="animation">
-<iframe src="https://drive.google.com/file/d/1Tjo3t-zTR7Dubpl3fBGv__nOdX528T4c/preview"></iframe>
-</div>
+<div class="grid">
 
-<div class="card" data-cat="design">
+<!-- VIDEO -->
+<iframe src="https://drive.google.com/file/d/1ckvhMgp0gTTWBwmOXaNMCKMU3pIGS7eF/preview"></iframe>
+<iframe src="https://drive.google.com/file/d/1ptn8VXK2ysjQh7Ij_jqHm5TGAT-T9Emf/preview"></iframe>
+<iframe src="https://drive.google.com/file/d/16o_ZX4LCJbMcZREonoRq6KWtH-5Nc8aP/preview"></iframe>
+
+<!-- ANIMATION -->
+<iframe src="https://drive.google.com/file/d/1Tjo3t-zTR7Dubpl3fBGv__nOdX528T4c/preview"></iframe>
+<iframe src="https://drive.google.com/file/d/1i08rY4_pNrzm8hnRnUHru-IeQGBOvYkR/preview"></iframe>
+<iframe src="https://drive.google.com/file/d/1lzOx7mjvDYy0JzRmk4IrrhORhxpIo16c/preview"></iframe>
+<iframe src="https://drive.google.com/file/d/1gsCPhe5W-4UADjVbndktFEMUcPvj3zpl/preview"></iframe>
+
+<!-- DESIGN -->
 <img src="https://lh3.googleusercontent.com/d/1UiDcyn-XxPzaWM0M5hWAqRSry9SoNvcO">
-</div>
+<img src="https://lh3.googleusercontent.com/d/1UC3waeVQFbhh0GMv_v0_XdDEQN4AhHMo">
+<img src="https://lh3.googleusercontent.com/d/1u6Td0sJ30MgngZSmyu8wc3xRQR7MXpOE">
+<img src="https://lh3.googleusercontent.com/d/1YFD7dOu41_at3jLrBeXymShVX3vixeqF">
 
 </div>
 </section>
@@ -296,18 +318,19 @@ document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
 function filter(type,btn){
-let cards=document.querySelectorAll('.card');
+let items=document.querySelectorAll('#work iframe, #work img');
 let buttons=document.querySelectorAll('.filters button');
 
 buttons.forEach(b=>b.classList.remove('active'));
 btn.classList.add('active');
 
-cards.forEach(card=>{
-card.style.display=(type==="all"||card.dataset.cat===type)?"block":"none";
+items.forEach(item=>{
+let parent=item.parentElement;
+let cat=parent.getAttribute("data-cat");
+parent.style.display=(type==="all"||cat===type)?"block":"none";
 });
 }
 
-/* SCROLL REVEAL */
 let reveals=document.querySelectorAll('.reveal');
 window.addEventListener('scroll',()=>{
 reveals.forEach(el=>{
