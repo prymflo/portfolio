@@ -11,7 +11,7 @@
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#050509;
+background:#000;
 color:white;
 overflow-x:hidden;
 }
@@ -26,24 +26,15 @@ justify-content:space-between;
 align-items:center;
 padding:20px 60px;
 background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(20px);
 z-index:100;
 }
 
-.nav img{
-height:45px;
-filter:brightness(1.5);
-}
-
-.nav a{
-color:#aaa;
-margin-left:25px;
-text-decoration:none;
-}
-
+.nav img{height:45px;}
+.nav a{color:#aaa;margin-left:25px;text-decoration:none;}
 .nav a:hover{color:white;}
 
-/* HERO ANIMATION */
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
@@ -51,16 +42,16 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-animation:fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn{
-from{opacity:0; transform:scale(0.9);}
-to{opacity:1; transform:scale(1);}
+padding:20px;
 }
 
 .hero h1{
-font-size:4.5rem;
+font-size:5rem;
+line-height:1.1;
+animation:fadeUp 1.5s ease;
+}
+
+.hero span{
 background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -68,9 +59,9 @@ background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
 
 .btn{
 margin-top:30px;
-padding:15px 40px;
-border:none;
+padding:16px 40px;
 border-radius:50px;
+border:none;
 background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
 cursor:pointer;
 transition:0.3s;
@@ -78,104 +69,89 @@ transition:0.3s;
 
 .btn:hover{
 transform:scale(1.1);
-box-shadow:0 0 30px #C9A1F0;
-}
-
-/* TRUST */
-.trust{
-display:flex;
-justify-content:center;
-gap:60px;
-padding:40px;
-text-align:center;
+box-shadow:0 0 40px #C9A1F0;
 }
 
 /* SECTION */
 section{
-padding:120px 60px;
+padding:140px 80px;
+text-align:center;
 }
 
 h2{
-text-align:center;
-margin-bottom:40px;
+font-size:3rem;
+margin-bottom:60px;
 }
 
-/* FILTER */
-.filters{
-text-align:center;
-margin-bottom:30px;
+/* SCROLL ANIMATION */
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
 }
 
-.filters button{
-padding:10px 20px;
-margin:5px;
-border:none;
-border-radius:20px;
-background:#111;
-color:white;
-cursor:pointer;
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 
-.filters .active{
-background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
-}
-
-/* GRID */
+/* WORK */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
+gap:30px;
 }
 
-/* CARD */
 .card{
-background:#111;
 border-radius:20px;
 overflow:hidden;
 transition:0.4s;
 }
 
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-}
-
-.card iframe{
-width:100%;
-height:400px;
-object-fit:cover;
-}
-
-.card img{
+.card iframe,.card img{
 width:100%;
 height:300px;
 object-fit:cover;
+}
+
+.card:hover{
+transform:scale(1.05);
 }
 
 /* PRICING */
 .pricing{
 display:flex;
 justify-content:center;
-gap:30px;
+gap:40px;
 flex-wrap:wrap;
 }
 
-.box{
-background:#111;
-padding:30px;
+.price-box{
+padding:40px;
 border-radius:20px;
-text-align:center;
-transition:0.3s;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
+transition:0.4s;
+width:250px;
 }
 
-.box:hover{
+.price-box:hover{
 transform:scale(1.1);
+box-shadow:0 0 50px rgba(201,161,240,0.4);
+}
+
+.price{
+font-size:2rem;
+margin-top:10px;
+color:#C9A1F0;
 }
 
 /* FORM */
 .form-box{
 max-width:500px;
 margin:auto;
-background:#111;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
 padding:30px;
 border-radius:20px;
 }
@@ -184,15 +160,21 @@ input,select,textarea{
 width:100%;
 padding:12px;
 margin:10px 0;
-border:none;
 border-radius:10px;
-background:#1a1a1a;
+border:none;
+background:#111;
 color:white;
+}
+
+/* ANIM */
+@keyframes fadeUp{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 footer{
 text-align:center;
-padding:50px;
+padding:60px;
 color:#777;
 }
 </style>
@@ -212,64 +194,44 @@ color:#777;
 
 <!-- HERO -->
 <section class="hero">
-<h1>We Don’t Edit Videos.<br>We Create Attention.</h1>
+<h1>We Don’t Edit.<br><span>We Create Attention.</span></h1>
 <button class="btn" onclick="scrollToSection('order')">Start Project</button>
 </section>
 
-<!-- TRUST -->
-<div class="trust">
-<div><b>50+</b><br>Clients</div>
-<div><b>10M+</b><br>Views</div>
-<div><b>100+</b><br>Projects</div>
-</div>
-
 <!-- WORK -->
-<section id="work">
+<section id="work" class="reveal">
 <h2>Selected Work</h2>
-
-<div class="filters">
-<button class="active" onclick="filter('all',this)">All</button>
-<button onclick="filter('editing',this)">Editing</button>
-<button onclick="filter('animation',this)">Animation</button>
-<button onclick="filter('design',this)">Design</button>
-</div>
 
 <div class="grid">
 
-<!-- EDITING (ALL YOUR VIDEOS) -->
-<div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn/preview"></iframe></div>
-<div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1ckvhMgp0gTTWBwmOXaNMCKMU3pIGS7eF/preview"></iframe></div>
-<div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1ptn8VXK2ysjQh7Ij_jqHm5TGAT-T9Emf/preview"></iframe></div>
-<div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/16o_ZX4LCJbMcZREonoRq6KWtH-5Nc8aP/preview"></iframe></div>
+<div class="card"><iframe src="https://drive.google.com/file/d/1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn/preview"></iframe></div>
+<div class="card"><iframe src="https://drive.google.com/file/d/1ckvhMgp0gTTWBwmOXaNMCKMU3pIGS7eF/preview"></iframe></div>
+<div class="card"><iframe src="https://drive.google.com/file/d/1ptn8VXK2ysjQh7Ij_jqHm5TGAT-T9Emf/preview"></iframe></div>
+<div class="card"><iframe src="https://drive.google.com/file/d/16o_ZX4LCJbMcZREonoRq6KWtH-5Nc8aP/preview"></iframe></div>
 
-<!-- ANIMATION -->
-<div class="card" data-cat="animation"><iframe src="https://drive.google.com/file/d/1Tjo3t-zTR7Dubpl3fBGv__nOdX528T4c/preview"></iframe></div>
-<div class="card" data-cat="animation"><iframe src="https://drive.google.com/file/d/1i08rY4_pNrzm8hnRnUHru-IeQGBOvYkR/preview"></iframe></div>
-<div class="card" data-cat="animation"><iframe src="https://drive.google.com/file/d/1lzOx7mjvDYy0JzRmk4IrrhORhxpIo16c/preview"></iframe></div>
-<div class="card" data-cat="animation"><iframe src="https://drive.google.com/file/d/1gsCPhe5W-4UADjVbndktFEMUcPvj3zpl/preview"></iframe></div>
+<div class="card"><iframe src="https://drive.google.com/file/d/1Tjo3t-zTR7Dubpl3fBGv__nOdX528T4c/preview"></iframe></div>
+<div class="card"><iframe src="https://drive.google.com/file/d/1i08rY4_pNrzm8hnRnUHru-IeQGBOvYkR/preview"></iframe></div>
 
-<!-- DESIGN -->
-<div class="card" data-cat="design"><img src="https://lh3.googleusercontent.com/d/1UiDcyn-XxPzaWM0M5hWAqRSry9SoNvcO"></div>
-<div class="card" data-cat="design"><img src="https://lh3.googleusercontent.com/d/1UC3waeVQFbhh0GMv_v0_XdDEQN4AhHMo"></div>
-<div class="card" data-cat="design"><img src="https://lh3.googleusercontent.com/d/1u6Td0sJ30MgngZSmyu8wc3xRQR7MXpOE"></div>
-<div class="card" data-cat="design"><img src="https://lh3.googleusercontent.com/d/1YFD7dOu41_at3jLrBeXymShVX3vixeqF"></div>
+<div class="card"><img src="https://lh3.googleusercontent.com/d/1UiDcyn-XxPzaWM0M5hWAqRSry9SoNvcO"></div>
+<div class="card"><img src="https://lh3.googleusercontent.com/d/1UC3waeVQFbhh0GMv_v0_XdDEQN4AhHMo"></div>
 
 </div>
 </section>
 
 <!-- PRICING -->
-<section id="pricing">
+<section id="pricing" class="reveal">
 <h2>Pricing</h2>
+
 <div class="pricing">
-<div class="box">Basic<br>$30-100</div>
-<div class="box">Standard<br>$100-150</div>
-<div class="box">Pro<br>$150-200</div>
-<div class="box">Premium<br>$200+</div>
+<div class="price-box"><h3>Basic</h3><div class="price">$30-100</div></div>
+<div class="price-box"><h3>Standard</h3><div class="price">$100-150</div></div>
+<div class="price-box"><h3>Pro</h3><div class="price">$150-200</div></div>
+<div class="price-box"><h3>Premium</h3><div class="price">$200+</div></div>
 </div>
 </section>
 
 <!-- ORDER -->
-<section id="order">
+<section id="order" class="reveal">
 <h2>Start Your Project</h2>
 
 <div class="form-box">
@@ -290,7 +252,7 @@ color:#777;
 <option>$200+</option>
 </select>
 
-<textarea id="details" placeholder="Details"></textarea>
+<textarea id="details" placeholder="Project details"></textarea>
 
 <button class="btn">Send Request</button>
 </form>
@@ -306,17 +268,15 @@ function scrollToSection(id){
 document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-function filter(type,btn){
-let cards=document.querySelectorAll('.card');
-let buttons=document.querySelectorAll('.filters button');
+let reveals=document.querySelectorAll('.reveal');
 
-buttons.forEach(b=>b.classList.remove('active'));
-btn.classList.add('active');
-
-cards.forEach(card=>{
-card.style.display=(type==="all"||card.dataset.cat===type)?"block":"none";
-});
+window.addEventListener('scroll',()=>{
+reveals.forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight-100){
+el.classList.add('active');
 }
+});
+});
 
 function sendEmail(e){
 e.preventDefault();
