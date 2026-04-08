@@ -180,34 +180,7 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
-/* FORM */
-.form-box{
-max-width:500px;
-margin:auto;
-background:#111;
-padding:30px;
-border-radius:20px;
-}
 
-input,select,textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-background:#1a1a1a;
-color:white;
-}
-
-footer{
-text-align:center;
-padding:50px;
-color:#777;
-}
-</style>
-</head>
-
-<body>
 
 <!-- NAV -->
 <div class="nav">
@@ -326,18 +299,10 @@ cards.forEach(card=>{
 card.style.display=(type==="all"||card.dataset.cat===type)?"block":"none";
 });
 }
-
-function sendEmail(e){
-e.preventDefault();
-let body=`Name:${name.value}%0AEmail:${email.value}%0AService:${service.value}%0ABudget:${budget.value}%0ADetails:${details.value}`;
-window.location.href=`mailto:prymflo@gmail.com?subject=Project&body=${body}`;
-}
 </script>
 
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
 <style>
 body{
 margin:0;
@@ -427,25 +392,7 @@ color:white;
 <h1>We Don’t Edit Videos.<br>We Create Attention.</h1>
 </section>
 
-<section id="order">
-<div class="form-box">
 
-<form onsubmit="sendEmail(event)">
-<input id="name" placeholder="Name" required>
-<input id="email" placeholder="Email" required>
-
-<select id="service">
-<option>Video Editing</option>
-<option>Animation</option>
-<option>Design</option>
-</select>
-
-<select id="budget">
-<option>$30-100</option>
-<option>$100-150</option>
-<option>$150-200</option>
-<option>$200+</option>
-</select>
 
 <textarea id="details" placeholder="Details"></textarea>
 
