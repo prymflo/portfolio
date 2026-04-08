@@ -7,15 +7,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-<!-- ✅ EMAILJS ADDED --><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PrimeFlow</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
 <style>
 body{
 margin:0;
@@ -180,7 +171,15 @@ transition:0.3s;
 transform:scale(1.1);
 }
 
+footer{
+text-align:center;
+padding:50px;
+color:#777;
+}
+</style>
+</head>
 
+<body>
 
 <!-- NAV -->
 <div class="nav">
@@ -188,14 +187,13 @@ transform:scale(1.1);
 <div>
 <a href="#work">Work</a>
 <a href="#pricing">Pricing</a>
-<a href="#order">Order</a>
 </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
 <h1>We Don’t Edit Videos.<br>We Create Attention.</h1>
-<button class="btn" onclick="scrollToSection('order')">Start Project</button>
+<button class="btn" onclick="scrollToSection('work')">View Work</button>
 </section>
 
 <!-- TRUST -->
@@ -218,7 +216,7 @@ transform:scale(1.1);
 
 <div class="grid">
 
-<!-- EDITING (ALL YOUR VIDEOS) -->
+<!-- EDITING -->
 <div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1Uk_xbE1idJdXPhVf-GnG0vq72L719MTn/preview"></iframe></div>
 <div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1ckvhMgp0gTTWBwmOXaNMCKMU3pIGS7eF/preview"></iframe></div>
 <div class="card" data-cat="editing"><iframe src="https://drive.google.com/file/d/1ptn8VXK2ysjQh7Ij_jqHm5TGAT-T9Emf/preview"></iframe></div>
@@ -250,35 +248,6 @@ transform:scale(1.1);
 </div>
 </section>
 
-<!-- ORDER -->
-<section id="order">
-<h2>Start Your Project</h2>
-
-<div class="form-box">
-<form onsubmit="sendEmail(event)">
-<input id="name" placeholder="Name">
-<input id="email" placeholder="Email">
-
-<select id="service">
-<option>Video Editing</option>
-<option>Animation</option>
-<option>Design</option>
-</select>
-
-<select id="budget">
-<option>$30-100</option>
-<option>$100-150</option>
-<option>$150-200</option>
-<option>$200+</option>
-</select>
-
-<textarea id="details" placeholder="Details"></textarea>
-
-<button class="btn">Send Request</button>
-</form>
-</div>
-</section>
-
 <footer>
 <p>© PrimeFlow</p>
 </footer>
@@ -300,107 +269,6 @@ card.style.display=(type==="all"||card.dataset.cat===type)?"block":"none";
 });
 }
 </script>
-
-</body>
-</html>
-<style>
-body{
-margin:0;
-font-family:'Inter',sans-serif;
-background:#050509;
-color:white;
-overflow-x:hidden;
-}
-
-/* NAV */
-.nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:100;
-}
-
-.nav img{
-height:45px;
-filter:brightness(1.5);
-}
-
-.nav a{
-color:#aaa;
-margin-left:25px;
-text-decoration:none;
-}
-
-.nav a:hover{color:white;}
-
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.hero h1{
-font-size:4.5rem;
-background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.btn{
-margin-top:30px;
-padding:15px 40px;
-border:none;
-border-radius:50px;
-background:linear-gradient(90deg,#C9A1F0,#FF6EC7);
-cursor:pointer;
-}
-
-/* FORM */
-.form-box{
-max-width:500px;
-margin:auto;
-background:#111;
-padding:30px;
-border-radius:20px;
-}
-
-input,select,textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-background:#1a1a1a;
-color:white;
-}
-</style>
-</head>
-
-<body>
-
-<section class="hero">
-<h1>We Don’t Edit Videos.<br>We Create Attention.</h1>
-</section>
-
-
-
-<textarea id="details" placeholder="Details"></textarea>
-
-
-</form>
-
-</div>
-</section>
 
 </body>
 </html>
